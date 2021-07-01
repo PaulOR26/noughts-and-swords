@@ -19,7 +19,6 @@ const Gameboard = ({ turn, setTurn }) => {
   function updatePlayerString(id, turn) {
     if (!noughts.includes(id) && !crosses.includes(id)) {
       if (turn === 'noughts') {
-        // change icon to nought
         setIcon((currIcon) => {
           const newIcons = { ...currIcon };
           newIcons[id] = '⭕';
@@ -30,7 +29,6 @@ const Gameboard = ({ turn, setTurn }) => {
           return (newString += id);
         });
       } else if (turn === 'crosses') {
-        // change icon to swords
         setIcon((currIcon) => {
           const newIcons = { ...currIcon };
           newIcons[id] = '⚔️';
@@ -38,7 +36,7 @@ const Gameboard = ({ turn, setTurn }) => {
         });
         setCrosses((currCrosses) => {
           let newString = currCrosses;
-          return (newString += currCrosses);
+          return (newString += id);
         });
       }
       setTurn((currTurn) => {
