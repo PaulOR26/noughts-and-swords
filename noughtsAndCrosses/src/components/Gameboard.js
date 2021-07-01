@@ -16,11 +16,11 @@ const Gameboard = ({ turn }) => {
   const [crosses, setCrosses] = useState('');
 
   function buttonClick(id, turn) {
-    console.log(turn, 'onclick');
+    // console.log(turn, 'onclick');
     if (turn === 'noughts') {
       setNoughts((currNoughts) => {
         let newString = currNoughts;
-        console.log((newString, id));
+        // console.log((newString, id));
         return (newString += id);
       });
     }
