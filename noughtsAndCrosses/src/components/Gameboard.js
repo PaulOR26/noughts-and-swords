@@ -1,28 +1,45 @@
 import React from 'react';
 import { useState } from 'react';
 
-// function setGameboard(id, turn, cb) {
-//   if (turn === 'noughts') {
-//     setNoughts((currNoughts) => {
-//       const newString = currNoughts;
-//       return (newString += id);
-//     });
-//   }
-// }
-
 const Gameboard = ({ turn }) => {
-  console.log(turn, 'gameboard');
   const [noughts, setNoughts] = useState('');
   const [crosses, setCrosses] = useState('');
+  const [icon, setIcon] = useState({
+    1: '',
+    2: '',
+    3: '',
+    4: '',
+    5: '',
+    6: '',
+    7: '',
+    8: '',
+    9: ''
+  });
 
-  function buttonClick(id, turn) {
-    // console.log(turn, 'onclick');
-    if (turn === 'noughts') {
-      setNoughts((currNoughts) => {
-        let newString = currNoughts;
-        // console.log((newString, id));
-        return (newString += id);
-      });
+  function updatePlayerString(id, turn) {
+    if (!noughts.includes(id) && !crosses.includes(id)) {
+      if (turn === 'noughts') {
+        // change icon to nought
+        setIcon((currIcon) => {
+          const newIcons = { ...currIcon };
+          newIcons[id] = '⭕';
+          return newIcons;
+        });
+
+        setNoughts((currNoughts) => {
+          let newString = currNoughts;
+          return (newString += id);
+        });
+      } else if (turn === 'crosses') {
+        // change icon to swords
+        setIcon((currIcon) => {
+          return '⚔️';
+        });
+        setCrosses((currCrosses) => {
+          let newString = currCrosses;
+          return (newString += currCrosses);
+        });
+      }
     }
   }
 
@@ -30,69 +47,87 @@ const Gameboard = ({ turn }) => {
     <div>
       <button
         onClick={() => {
-          buttonClick('1', turn);
+          updatePlayerString('1', turn);
         }}
         id='1'
         className='gameBoard'
-      ></button>
-      {/* <button
+      >
+        {icon['1']}
+      </button>
+      <button
         onClick={() => {
-          setGameboard('2', turn);
+          updatePlayerString('2', turn);
         }}
         id='2'
         className='gameBoard'
-      ></button>
+      >
+        {icon['2']}
+      </button>
       <button
         onClick={() => {
-          setGameboard('3', turn);
+          updatePlayerString('3', turn);
         }}
         id='3'
         className='gameBoard'
-      ></button>
+      >
+        {icon['3']}
+      </button>
       <br></br>
       <button
         onClick={() => {
-          setGameboard('4', turn);
+          updatePlayerString('4', turn);
         }}
         id='4'
         className='gameBoard'
-      ></button>
+      >
+        {icon['4']}
+      </button>
       <button
         onClick={() => {
-          setGameboard('5', turn);
+          updatePlayerString('5', turn);
         }}
         id='5'
         className='gameBoard'
-      ></button>
+      >
+        {icon['5']}
+      </button>
       <button
         onClick={() => {
-          setGameboard('6', turn);
+          updatePlayerString('6', turn);
         }}
         id='6'
         className='gameBoard'
-      ></button>
+      >
+        {icon['6']}
+      </button>
       <br></br>
       <button
         onClick={() => {
-          setGameboard('7', turn);
+          updatePlayerString('7', turn);
         }}
         id='7'
         className='gameBoard'
-      ></button>
+      >
+        {icon['7']}
+      </button>
       <button
         onClick={() => {
-          setGameboard('8', turn);
+          updatePlayerString('8', turn);
         }}
         id='8'
         className='gameBoard'
-      ></button>
+      >
+        {icon['8']}
+      </button>
       <button
         onClick={() => {
-          setGameboard('9', turn);
+          updatePlayerString('9', turn);
         }}
         id='9'
         className='gameBoard'
-      ></button> */}
+      >
+        {icon['9']}
+      </button>
     </div>
   );
 };
