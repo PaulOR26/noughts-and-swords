@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Gameboard turn={turn} />
+      <Gameboard turn={turn} setTurn={setTurn} />
       <TurnIndicator />
       <PlayAgain />
     </div>

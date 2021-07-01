@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Gameboard = ({ turn }) => {
+const Gameboard = ({ turn, setTurn }) => {
   const [noughts, setNoughts] = useState('');
   const [crosses, setCrosses] = useState('');
   const [icon, setIcon] = useState({
@@ -25,7 +25,6 @@ const Gameboard = ({ turn }) => {
           newIcons[id] = '⭕';
           return newIcons;
         });
-
         setNoughts((currNoughts) => {
           let newString = currNoughts;
           return (newString += id);
@@ -33,13 +32,18 @@ const Gameboard = ({ turn }) => {
       } else if (turn === 'crosses') {
         // change icon to swords
         setIcon((currIcon) => {
-          return '⚔️';
+          const newIcons = { ...currIcon };
+          newIcons[id] = '⚔️';
+          return newIcons;
         });
         setCrosses((currCrosses) => {
           let newString = currCrosses;
           return (newString += currCrosses);
         });
       }
+      setTurn((currTurn) => {
+        return currTurn === 'noughts' ? 'crosses' : 'noughts';
+      });
     }
   }
 
