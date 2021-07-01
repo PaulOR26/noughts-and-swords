@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import GamePage from './components/GamePage';
 
 function App() {
-  return <div className='App'></div>;
+  return (
+    <div className='App'>
+      <GamePage />
+    </div>
+  );
 }
 
 export default App;
