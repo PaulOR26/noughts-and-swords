@@ -43,6 +43,7 @@ const Gameboard = ({
       setTurnIndicator(() => {
         return turn === 'noughts' ? '⚔️' : '⭕';
       });
+      checkWin();
     }
   }
 
