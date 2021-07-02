@@ -1,5 +1,6 @@
-function checkWin(playerBoard, player) {
-  console.log(playerBoard, player, 'hello from checkWin');
+function checkWin(playerBoard, id) {
+  playerBoard += id;
+  console.log(playerBoard, 'hello from checkWin');
   const winCombos = ['123', '147', '159', '258', '369', '357', '456', '789'];
   let hasWon = false;
 
@@ -9,10 +10,7 @@ function checkWin(playerBoard, player) {
     });
     if (hasWon) break;
   }
-
-  if (hasWon) {
-    alert(`${player} has won!`);
-  }
+  return hasWon;
 }
 
 export default checkWin;

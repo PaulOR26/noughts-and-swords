@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import TurnIndicator from './TurnIndicator';
+import WinInstance from './WinInstance';
 import checkWin from '../utils/win';
 
 const Gameboard = ({
@@ -15,12 +16,16 @@ const Gameboard = ({
 }) => {
   const [turnIndicator, setTurnIndicator] = useState('⭕');
 
-  if (turn === 'crosses') checkWin(noughts, 'Noughts');
-  else checkWin(crosses, 'Swords');
+  const [hasWon, setHasWon] = useState('');
 
   function updatePlayerString(id, turn) {
     if (!noughts.includes(id) && !crosses.includes(id)) {
       if (turn === 'noughts') {
+        if (checkWin(noughts, id)) {
+          setHasWon(() => {
+            return `Noughts has won!`;
+          });
+        }
         setIcon((currIcon) => {
           const newIcons = { ...currIcon };
           newIcons[id] = '⭕';
@@ -31,6 +36,11 @@ const Gameboard = ({
           return (newString += id);
         });
       } else if (turn === 'crosses') {
+        if (checkWin(crosses, id)) {
+          setHasWon(() => {
+            return `Swords has won!`;
+          });
+        }
         setIcon((currIcon) => {
           const newIcons = { ...currIcon };
           newIcons[id] = '⚔️';
@@ -42,12 +52,21 @@ const Gameboard = ({
         });
       }
 
+      // if (turn === 'crosses') checkWin(noughts, 'Noughts');
+      // else checkWin(crosses, 'Swords');
+
       setTurn((currTurn) => {
         return currTurn === 'noughts' ? 'crosses' : 'noughts';
       });
       setTurnIndicator(() => {
         return turn === 'noughts' ? '⚔️' : '⭕';
       });
+      // setHasWon(() => {
+      //   console.log(turn);
+      //   console.log(noughts);
+      //   if (turn === 'crosses') return checkWin(crosses, 'Swords');
+      //   else return checkWin(noughts, 'Noughts');
+      // });
     }
   }
 
@@ -136,6 +155,7 @@ const Gameboard = ({
       >
         {icon['9']}
       </button>
+      <WinInstance hasWon={hasWon} />
       <TurnIndicator turn={turn} turnIndicator={turnIndicator} />
     </div>
   );
