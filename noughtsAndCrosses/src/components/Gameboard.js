@@ -147,7 +147,6 @@ const Gameboard = ({
         {icon['9']}
       </button>
       <WinInstance hasWon={hasWon} />
-
       <TurnIndicator turn={turn} turnIndicator={turnIndicator} />
     </div>
   );

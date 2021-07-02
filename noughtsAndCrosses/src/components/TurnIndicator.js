@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TurnIndicator = ({ turn, turnIndicator }) => {
+const TurnIndicator = ({ turnIndicator }) => {
   return <p id='turnIndicator'>{turnIndicator}</p>;
 };
 
