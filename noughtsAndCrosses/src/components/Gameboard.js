@@ -13,10 +13,10 @@ const Gameboard = ({
   setCrosses,
   icon,
   setIcon,
+  hasWon,
+  setHasWon
 }) => {
   const [turnIndicator, setTurnIndicator] = useState('⭕');
-
-  const [hasWon, setHasWon] = useState('');
 
   function updatePlayerString(id, turn) {
     if (!noughts.includes(id) && !crosses.includes(id)) {
@@ -52,26 +52,17 @@ const Gameboard = ({
         });
       }
 
-      // if (turn === 'crosses') checkWin(noughts, 'Noughts');
-      // else checkWin(crosses, 'Swords');
-
       setTurn((currTurn) => {
         return currTurn === 'noughts' ? 'crosses' : 'noughts';
       });
       setTurnIndicator(() => {
         return turn === 'noughts' ? '⚔️' : '⭕';
       });
-      // setHasWon(() => {
-      //   console.log(turn);
-      //   console.log(noughts);
-      //   if (turn === 'crosses') return checkWin(crosses, 'Swords');
-      //   else return checkWin(noughts, 'Noughts');
-      // });
     }
   }
 
   return (
-    <div>
+    <div className='gameGrid'>
       <button
         onClick={() => {
           updatePlayerString('1', turn);
@@ -99,7 +90,7 @@ const Gameboard = ({
       >
         {icon['3']}
       </button>
-      <br></br>
+
       <button
         onClick={() => {
           updatePlayerString('4', turn);
@@ -127,7 +118,7 @@ const Gameboard = ({
       >
         {icon['6']}
       </button>
-      <br></br>
+
       <button
         onClick={() => {
           updatePlayerString('7', turn);
@@ -156,6 +147,7 @@ const Gameboard = ({
         {icon['9']}
       </button>
       <WinInstance hasWon={hasWon} />
+
       <TurnIndicator turn={turn} turnIndicator={turnIndicator} />
     </div>
   );

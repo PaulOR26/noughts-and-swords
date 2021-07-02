@@ -3,11 +3,7 @@ import React from 'react';
 // const [hasWon, setHasWon] = useState("");
 
 const WinInstance = ({ hasWon }) => {
-  return (
-    <div>
-      <p>{hasWon}</p>
-    </div>
-  );
+  return <p id='winMessage'>{hasWon}</p>;
 };
 
 export default WinInstance;

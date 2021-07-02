@@ -10,6 +10,7 @@ function App() {
   const [turn, setTurn] = useState('noughts');
   const [noughts, setNoughts] = useState('');
   const [crosses, setCrosses] = useState('');
+  const [hasWon, setHasWon] = useState('');
   const [icon, setIcon] = useState({
     1: '',
     2: '',
@@ -34,13 +35,13 @@ function App() {
         setCrosses={setCrosses}
         icon={icon}
         setIcon={setIcon}
+        setHasWon={setHasWon}
+        hasWon={hasWon}
       />
       <PlayAgain
-        noughts={noughts}
-        crosses={crosses}
         setNoughts={setNoughts}
         setCrosses={setCrosses}
-        icon={icon}
+        setHasWon={setHasWon}
         setIcon={setIcon}
       />
     </div>
