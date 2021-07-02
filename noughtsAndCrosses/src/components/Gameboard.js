@@ -1,20 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
+import TurnIndicator from './TurnIndicator';
 
-const Gameboard = ({ turn, setTurn }) => {
-  const [noughts, setNoughts] = useState('');
-  const [crosses, setCrosses] = useState('');
-  const [icon, setIcon] = useState({
-    1: '',
-    2: '',
-    3: '',
-    4: '',
-    5: '',
-    6: '',
-    7: '',
-    8: '',
-    9: ''
-  });
+const Gameboard = ({
+  turn,
+  setTurn,
+  noughts,
+  setNoughts,
+  crosses,
+  setCrosses,
+  icon,
+  setIcon
+}) => {
+  const [turnIndicator, setTurnIndicator] = useState('⭕');
 
   function updatePlayerString(id, turn) {
     if (!noughts.includes(id) && !crosses.includes(id)) {
@@ -41,6 +39,9 @@ const Gameboard = ({ turn, setTurn }) => {
       }
       setTurn((currTurn) => {
         return currTurn === 'noughts' ? 'crosses' : 'noughts';
+      });
+      setTurnIndicator(() => {
+        return turn === 'noughts' ? '⚔️' : '⭕';
       });
     }
   }
@@ -130,6 +131,7 @@ const Gameboard = ({ turn, setTurn }) => {
       >
         {icon['9']}
       </button>
+      <TurnIndicator turn={turn} turnIndicator={turnIndicator} />
     </div>
   );
 };

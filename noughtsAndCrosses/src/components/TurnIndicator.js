@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TurnIndicator = () => {
+const TurnIndicator = ({ turn, turnIndicator }) => {
   return (
     <div>
-      <p>⭕</p>
-      <p>⚔️</p>
+      <p>{turnIndicator}</p>
     </div>
   );
 };
