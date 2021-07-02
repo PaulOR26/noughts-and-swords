@@ -6,3 +6,8 @@
   width: 200px;
   height: 200px;
 }
+
+.App {
+  background-image: url(./imgs/Flat-Mountains.svg);
+  background-repeat: no-repeat;
+}
