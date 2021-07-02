@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import TurnIndicator from './TurnIndicator';
+import checkWin from '../utils/win';
 
 const Gameboard = ({
   turn,
@@ -10,9 +11,12 @@ const Gameboard = ({
   crosses,
   setCrosses,
   icon,
-  setIcon
+  setIcon,
 }) => {
   const [turnIndicator, setTurnIndicator] = useState('⭕');
+
+  if (turn === 'crosses') checkWin(noughts, 'Noughts');
+  else checkWin(crosses, 'Swords');
 
   function updatePlayerString(id, turn) {
     if (!noughts.includes(id) && !crosses.includes(id)) {
@@ -37,13 +41,13 @@ const Gameboard = ({
           return (newString += id);
         });
       }
+
       setTurn((currTurn) => {
         return currTurn === 'noughts' ? 'crosses' : 'noughts';
       });
       setTurnIndicator(() => {
         return turn === 'noughts' ? '⚔️' : '⭕';
       });
-      checkWin();
     }
   }
 
