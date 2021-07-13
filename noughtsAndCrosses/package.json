@@ -1,9 +1,10 @@
 {
   "name": "fe-tiny-react-apps",
   "version": "0.1.0",
-  "private": true, "engines": {
-      "node": "12.x"
-    }, 
+  "private": true,
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -12,10 +13,9 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
-    
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start node listen.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
