@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Gameboard from './components/Gameboard';
+import React from 'react';
 
 import PlayAgain from './components/PlayAgain';
 import { useState } from 'react';
