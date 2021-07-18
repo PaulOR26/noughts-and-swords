@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Noughts & Swords
 
 This was a joint project between [nolixul](https://github.com/nolixul) and [paulor26](https://github.com/PaulOR26) to build a mini app using React.
 
