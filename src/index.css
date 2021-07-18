@@ -7,10 +7,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: #ee7f31; */
   background-image: url(./imgs/Flat-Mountains.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
   font-family: 'Bebas Neue', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 code {

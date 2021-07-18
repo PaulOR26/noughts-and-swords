@@ -14,7 +14,7 @@ const Gameboard = ({
   icon,
   setIcon,
   hasWon,
-  setHasWon
+  setHasWon,
 }) => {
   const [turnIndicator, setTurnIndicator] = useState('⭕');
 
@@ -63,89 +63,93 @@ const Gameboard = ({
 
   return (
     <div className='gameGrid'>
-      <button
-        onClick={() => {
-          updatePlayerString('1', turn);
-        }}
-        id='1'
-        className='gameBoard'
-      >
-        {icon['1']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('2', turn);
-        }}
-        id='2'
-        className='gameBoard'
-      >
-        {icon['2']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('3', turn);
-        }}
-        id='3'
-        className='gameBoard'
-      >
-        {icon['3']}
-      </button>
-
-      <button
-        onClick={() => {
-          updatePlayerString('4', turn);
-        }}
-        id='4'
-        className='gameBoard'
-      >
-        {icon['4']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('5', turn);
-        }}
-        id='5'
-        className='gameBoard'
-      >
-        {icon['5']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('6', turn);
-        }}
-        id='6'
-        className='gameBoard'
-      >
-        {icon['6']}
-      </button>
-
-      <button
-        onClick={() => {
-          updatePlayerString('7', turn);
-        }}
-        id='7'
-        className='gameBoard'
-      >
-        {icon['7']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('8', turn);
-        }}
-        id='8'
-        className='gameBoard'
-      >
-        {icon['8']}
-      </button>
-      <button
-        onClick={() => {
-          updatePlayerString('9', turn);
-        }}
-        id='9'
-        className='gameBoard'
-      >
-        {icon['9']}
-      </button>
+      <div className='top-row'>
+        <button
+          onClick={() => {
+            updatePlayerString('1', turn);
+          }}
+          id='1'
+          className='gameBoard'
+        >
+          {icon['1']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('2', turn);
+          }}
+          id='2'
+          className='gameBoard'
+        >
+          {icon['2']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('3', turn);
+          }}
+          id='3'
+          className='gameBoard'
+        >
+          {icon['3']}
+        </button>
+      </div>
+      <div className='middle-row'>
+        <button
+          onClick={() => {
+            updatePlayerString('4', turn);
+          }}
+          id='4'
+          className='gameBoard'
+        >
+          {icon['4']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('5', turn);
+          }}
+          id='5'
+          className='gameBoard'
+        >
+          {icon['5']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('6', turn);
+          }}
+          id='6'
+          className='gameBoard'
+        >
+          {icon['6']}
+        </button>
+      </div>
+      <div className='bottom-row'>
+        <button
+          onClick={() => {
+            updatePlayerString('7', turn);
+          }}
+          id='7'
+          className='gameBoard'
+        >
+          {icon['7']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('8', turn);
+          }}
+          id='8'
+          className='gameBoard'
+        >
+          {icon['8']}
+        </button>
+        <button
+          onClick={() => {
+            updatePlayerString('9', turn);
+          }}
+          id='9'
+          className='gameBoard'
+        >
+          {icon['9']}
+        </button>
+      </div>
       <WinInstance hasWon={hasWon} />
       <TurnIndicator turn={turn} turnIndicator={turnIndicator} />
     </div>
