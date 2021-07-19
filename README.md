@@ -24,7 +24,7 @@ There were two main purposes of creating the app. Firstly to develop our approac
 - **Install** dependencies  
   `npm install`
 
-- **Deploy** website  
+- **Run** in browser  
   `npm start`
 
 ## Requirements
