@@ -1,7 +1,12 @@
 import React from 'react';
 
 const TurnIndicator = ({ turnIndicator }) => {
-  return <p id='turnIndicator'>{turnIndicator}</p>;
+  return (
+    <div className='turn-section'>
+      <p className='next-turn'>Next turn: </p>
+      <p id='turnIndicator'>{turnIndicator}</p>
+    </div>
+  );
 };
 
 export default TurnIndicator;
