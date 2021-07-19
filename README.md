@@ -4,6 +4,8 @@ This was a joint project between [nolixul](https://github.com/nolixul) and [paul
 
 There were two main purposes of creating the app. Firstly to develop our approaches to planning an app build, and secondly to consolidate our learning of the react framework. Through React we were able to utilise components and hooks to implement a simple idea that has the potential to be scaled up.
 
+[Click here to view and play the hosted game.](https://noughts-and-swords.netlify.app)
+
 ## Our planning consisted of:
 
 - Outlining the basic functionality and sketching the UI.
