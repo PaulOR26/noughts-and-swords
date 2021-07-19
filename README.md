@@ -17,7 +17,7 @@ There were two main purposes of creating the app. Firstly to develop our approac
   ![](readme-screenshot-fork.png)
 
 - **Clone** to your local machine  
-  `git clone <link to repo>`
+  `git clone https://github.com/PaulOR26/noughts-and-swords.git`
 
 - **Install** dependencies  
   `npm install`
